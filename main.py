@@ -16,7 +16,7 @@ print(todos_estados)
 estados_adivinhados = []
 
 while len(estados_adivinhados) < 50: #enquanto a quantidade(len) de estados advinhados for menor que 50:
-    resposta_estado = tela.textinput(title=f"{len(estados_adivinhados)}/50 State Correct", prompt="Qual o nome do estado?: ")
+    resposta_estado = tela.textinput(title=f"{len(estados_adivinhados)}/50 State Correct", prompt="Qual o nome do estado?: ").title #o .title torna dota a primeira letra em maisculo igual oq está em nossa planilha(.data).
     print(resposta_estado)
 
 
