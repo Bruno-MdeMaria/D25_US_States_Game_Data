@@ -20,7 +20,8 @@ if resposta_estado == todos_estados:
     t = turtle.Turtle() #cria uma turtle
     t.hideturtle()    #esconde turtle
     t.penup()
-    t.goto()
+    state_data = data[data.state == resposta_estado] #se o estado escolhido for igual a algum estado na tabela
+    t.goto(state_data.x, state_data.y) #como a variavel receberá a linha da tabela podemos chamar os valores x e y diretamente usando a descrição da coluna.
 
 
 
