@@ -15,6 +15,7 @@ print(todos_estados)
 
 
 resposta_estado = tela.textinput(title="Escolha um estado", prompt="Qual o nome do estado?: ")
+print(resposta_estado)
 
 if resposta_estado == todos_estados:
     t = turtle.Turtle() #cria uma turtle
