@@ -16,10 +16,19 @@ print(todos_estados)
 estados_adivinhados = []
 
 while len(estados_adivinhados) < 50: #enquanto a quantidade(len) de estados advinhados for menor que 50:
-    resposta_estado = tela.textinput(title=f"{len(estados_adivinhados)}/50 State Correct", prompt="Qual o nome do estado?: ").title #o .title torna dota a primeira letra em maisculo igual oq está em nossa planilha(.data).
+    resposta_estado = tela.textinput(title=f"{len(estados_adivinhados)}/50 State Correct", prompt="Qual o nome do estado?: ").title() #o .title torna dota a primeira letra em maisculo igual oq está em nossa planilha(.data).
     print(resposta_estado)
 
+    if resposta_estado == "Exit":  #quando escrever "exit" 
+        estados_faltantes =[]
+        for estado in todos_estados:     #quando solicitar a saida será verificado e apresentado quais estados faltam
+            if estado not in estados_adivinhados:  #para cada estado no loop não estiver na lista de adivinhados ele será acrescentado na lista estados_faltantes:
+                estados_faltantes.append(estado)
+        novo_data = pandas.DataFrame(estados_faltantes) #criando um novo dataframe com os estados faltantes
+        novo_data.to_csv("estados_esquecidos.csv") #com o dataframe criados podemos criar um arquivo csv.
+        break
 
+        
     if resposta_estado in todos_estados:   #se a resposta estiver dentro da planilha:
         estados_adivinhados.append(resposta_estado)
         t = turtle.Turtle() #cria uma turtle
@@ -32,7 +41,7 @@ while len(estados_adivinhados) < 50: #enquanto a quantidade(len) de estados advi
 
 
 
-tela.exitonclick()
+
 #FUNÇÃO PARA ENCONTRAR AS COORDENADAS DENTRO DO MAPA:
 # def local_clique(x, y):
 #     print(x, y)
