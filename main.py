@@ -21,7 +21,9 @@ if resposta_estado == todos_estados:
     t.hideturtle()    #esconde turtle
     t.penup()
     state_data = data[data.state == resposta_estado] #se o estado escolhido for igual a algum estado na tabela
-    t.goto(state_data.x, state_data.y) #como a variavel receberá a linha da tabela podemos chamar os valores x e y diretamente usando a descrição da coluna.
+    t.goto(int(state_data.x),int(state_data.y)) #como a variavel receberá a linha da tabela podemos chamar os valores x e y diretamente usando a descrição da coluna.
+    t.write(state_data.state.item())  #método de escrita da turtle irá escrever a escolha no local correto.
+
 
 
 
