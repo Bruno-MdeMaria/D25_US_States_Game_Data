@@ -21,12 +21,12 @@ while len(estados_adivinhados) < 50: #enquanto a quantidade(len) de estados advi
 
     if resposta_estado == "Exit":  #quando escrever "exit" 
         estados_faltantes =[estado for estado in todos_estados if estado not in estados_adivinhados]
-        #for estado in todos_estados:     #quando solicitar a saida será verificado e apresentado quais estados faltam
-            #if estado not in estados_adivinhados:  #para cada estado no loop não estiver na lista de adivinhados ele será acrescentado na lista estados_faltantes:
-                #estados_faltantes.append(estado)
+        #quando solicitar a saida será verificado e apresentado quais estados faltam
+        #para cada estado no loop não estiver na lista de adivinhados ele será acrescentado na lista estados_faltantes:
         novo_data = pandas.DataFrame(estados_faltantes) #criando um novo dataframe com os estados faltantes
         novo_data.to_csv("estados_esquecidos.csv") #com o dataframe criado podemos criar um arquivo csv.
         break
+       
 
         
     if resposta_estado in todos_estados:   #se a resposta estiver dentro da planilha:
